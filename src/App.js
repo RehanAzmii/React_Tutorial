@@ -1,15 +1,16 @@
+import React from "react";
+import "./App.css";
 
-import './App.css';
-import Header from './Components/Header';
-import Body from './Components/Body';
-import Footer from './Components/Footer';
+import Country_Table from "./Components/Country_Table";
+import Header from "./Components/Header";
+import State from "./Components/State";
+
 function App() {
   return (
     <div>
-      <Header/>
-      <Body/>
-      <Footer/>
-    
+      {/* <Header/> */}
+      {/* <Country_Table /> */}
+      <State/>
     </div>
   );
 }
