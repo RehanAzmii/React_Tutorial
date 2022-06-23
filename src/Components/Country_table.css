@@ -65,5 +65,13 @@ body {
 }
 
 .right{
-    justify-content: flex-end;
+    justify-content: center;
+    margin-left: 552px;
+}
+table {
+    margin-top: inherit!important;
+ 
+}
+.shadow {
+    box-shadow: inherit!important; 
 }
