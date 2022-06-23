@@ -5,6 +5,22 @@
 * ==========================================
 *
 */
+body
+{
+    background: linear-gradient(to right, #ffffff, #ffffff)!important;
+}
+.table-responsive {
+   
+    width: 65%!important;
+   
+    
+    margin: auto!important;
+}
+table
+{
+    margin-top: 129px;
+    border: 1px solid #dee2e6;
+}
 .table-fixed tbody {
     height: 300px;
     overflow-y: auto;

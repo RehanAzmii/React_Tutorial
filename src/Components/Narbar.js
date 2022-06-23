@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <div>
@@ -8,9 +10,9 @@ const Navbar = () => {
             {/* <!-- Navigation Menu--> */}
             <ul className="navigation-menu">
               <li className="has-submenu">
-                <a href="index.html">
+                <NavLink to="/">
                   <i className="dripicons-device-desktop"></i>Dashboard
-                </a>
+                </NavLink>
               </li>
               <li className="has-submenu">
                 <a href="calender.html">
@@ -257,10 +259,10 @@ const Navbar = () => {
                   <li>
                     <ul>
                       <li>
-                        <a href="pages-login.html">Country</a>
+                        <NavLink to="/country">Country</NavLink>
                       </li>
                       <li>
-                        <a href="pages-register.html">States</a>
+                        <NavLink to="/state">States</NavLink>
                       </li>
                       <li>
                         <a href="pages-recoverpw.html">City</a>
@@ -290,7 +292,6 @@ const Navbar = () => {
                       </li>
                     </ul>
                   </li>
-                
                 </ul>
               </li>
             </ul>
