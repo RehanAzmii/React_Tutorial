@@ -20,6 +20,7 @@ table
 {
     margin-top: 129px;
     border: 1px solid #dee2e6;
+    
 }
 .table-fixed tbody {
     height: 300px;
@@ -74,8 +75,19 @@ body {
 }
 table {
     margin-top: inherit!important;
+    
  
 }
 .shadow {
     box-shadow: inherit!important; 
+}
+
+.cus-table
+{
+    
+    width: 57%!important;
+}
+.cus-right {
+    position: relative;
+    top: 200px;
 }

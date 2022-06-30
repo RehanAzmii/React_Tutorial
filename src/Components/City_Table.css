@@ -5,30 +5,14 @@
 * ==========================================
 *
 */
-body
-{
-    background: linear-gradient(to right, #ffffff, #ffffff)!important;
-}
-.table-responsive {
-   
-    width: 100%!important;
-   
-    
-    margin: auto!important;
-}
-table
-{
-    margin-top: 129px;
-    border: 1px solid #dee2e6;
-}
 .table-fixed tbody {
-    height: 300px;
+    height: calc(100vh - 300px);
     overflow-y: auto;
     width: 100%;
 }
-.boxscroll {
-    height: inherit!important;
-   
+
+.right{
+    justify-content: flex-end;
 }
 
 .table-fixed thead,
@@ -68,14 +52,3 @@ body {
     margin-top: 110px;
 }
 
-.right{
-    justify-content: center;
-    margin-left: 552px;
-}
-table {
-    margin-top: inherit!important;
- 
-}
-.shadow {
-    box-shadow: inherit!important; 
-}

@@ -1,6 +1,6 @@
 import React from "react";
 import { stockData } from "../date";
-import "./Country_table.css";
+import "./State.css";
 
 import Leftbar from "./Leftbar";
 import Rightbar from "./Rightbar";
@@ -28,11 +28,11 @@ function State() {
 
         <Navbar />
       </header>
-      <div className="table-responsive">
+      <div className="table-responsive cus-table">
         <table className="table">
           <thead>
             <tr>
-              {tableHead1.map((data, index) => {
+              {tableHead1.map((data ) => {
                 return (
                   <th scope="col" style={{ width: data.width }}>
                     {data.title}

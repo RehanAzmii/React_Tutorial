@@ -38,7 +38,7 @@ function Country_Table() {
 
             {/* <!-- Fixed header table--> */}
             <div className="table-responsive">
-              <table className="table">
+              <table className="table ">
                 <thead>
                   <tr>
                     {tableHead.map((data, index) => {
