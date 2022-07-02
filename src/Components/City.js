@@ -1,142 +1,130 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import Leftbar from "./Leftbar";
 import Rightbar from "./Rightbar";
 import Navbar from "./Narbar";
 import "./City_Table.css";
 import { Button } from "react-bootstrap";
+import Model from "./Modal";
 
-export const City=() => {
-   //use effect
-   useEffect(() =>{
-       callAPI();
-   }, []);
+export const City = () => {
+  //use effect
+  useEffect(() => {
+    callAPI();
+  }, []);
 
-   //use State
-   const [data, setData] = useState([]);
-//    const [show,setShow] = useState(false)
+  //use State
+  const [data, setData] = useState([]);
+  const [open, setOpen] = useState(false);
 
-   // functions
-   const callAPI = async() =>{
+  // functions
+  const callAPI = async () => {
     const url = "https://reqres.in/api/users?page=2";
     const res = await fetch(url);
     const response = await res.json();
     setData([...response.data]);
-   }
+  };
 
-   console.log(data)
-   const tableHead = [
+  console.log(data);
+  const tableHead = [
     { title: "id", width: "5%" },
     { title: "eamil", width: "55%" },
     { title: "first_name", width: "20%" },
     { title: "last_namel", width: "20%" },
   ];
 
-
-  return(
+  return (
     <div>
-    <div>
-      {" "}
-      <header id="topnav">
-        <div className="topbar-main">
-          <div className="container-fluid">
-            {/* <!-- Logo container--> */}
-            <Leftbar />
-            {/* <!-- End Logo container--> */}
-            <Rightbar />
-            {/* <!-- end menu-extras --> */}
-            <div className="clearfix"></div>
-          </div>
-          {/* <!-- end container --> */}
-        </div>
-        {/* <!-- end topbar-main --> */}
-        {/* <!-- MENU Start --> */}
-        <Navbar />
-        {/* <!-- end navbar-custom --> */}
-      </header>
-      <div className="container-fluid py-5 cus-top">
-        <div className="row">
-          <div className="col-lg-12 bg-white rounded shadow">
-          <div className="d-flex pt-2 pb-2 right">
-              <Button className="btn btn-danger">New</Button>
+      <div>
+        {" "}
+        <header id="topnav">
+          <div className="topbar-main">
+            <div className="container-fluid">
+              {/* <!-- Logo container--> */}
+              <Leftbar />
+              {/* <!-- End Logo container--> */}
+              <Rightbar />
+              {/* <!-- end menu-extras --> */}
+              <div className="clearfix"></div>
             </div>
-            {/* <div className="d-flex pt-2 pb-2 right">
-              <Button
-                className="btn btn-danger"
-                onClick={() => setShow(true)}
-              >
-                New
-              </Button>
-            </div> */}
-            {/* {show && (
-              <Modal
-                setData={setData}
-                show={show}
-                onClose={() => setShow(false)}
-                closeModal={setShow}
-              />
-            )} */}
-            <div className="table-responsive">
-              <table className="table table-bordered">
-                <thead>
-                  <tr>
-                    {tableHead.map((data) => {
+            {/* <!-- end container --> */}
+          </div>
+          {/* <!-- end topbar-main --> */}
+          {/* <!-- MENU Start --> */}
+          <Navbar />
+          {/* <!-- end navbar-custom --> */}
+        </header>
+        <div className="container-fluid py-5 cus-top">
+          <div className="row">
+            <div className="col-lg-12 bg-white rounded shadow">
+              <div className="d-flex pt-2 pb-2 right">
+                <Button
+                  className="btn btn-danger"
+                  onClick={() => setOpen(true)}
+                >
+                  New
+                </Button>
+              </div>
+               {open && (
+                 <Model
+                 setData={setData}
+                 open={open}
+                 onClose={() => setOpen(false)}
+                 closeModal={setOpen}
+               />
+ 
+               )}
+             
+              <div className="table-responsive">
+                <table className="table table-bordered">
+                  <thead>
+                    <tr>
+                      {tableHead.map((data) => {
+                        return (
+                          <th
+                            scope="col"
+                            className=""
+                            style={{ width: data.width }}
+                          >
+                            {data.title}
+                          </th>
+                        );
+                      })}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {data.map((data, index) => {
                       return (
-                        <th
-                          scope="col"
-                          className=""
-                          style={{ width: data.width }}
-                        >
-                          {data.title}
-                        </th>
+                        <tr key={index}>
+                          <th scope="row">{data.id}</th>
+                          <td>{data.email}</td>
+                          <td className="">{data.first_name}</td>
+                          <td className="">{data.last_name}</td>
+                        </tr>
                       );
                     })}
-                  </tr>
-                </thead>
-                <tbody>
-                  {data.map((data, index) => {
-                    return (
-                      <tr key={index}>
-                        <th scope="row">{data.id}</th>
-                        <td>{data.email}</td>
-                        <td className="">{data.first_name}</td>
-                        <td className="">{data.last_name}</td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
 };
-
-
-  
-     
-
-
 
 //   useEffect(()=>{
 
-
 //     fetch("https://reqres.in/api/users?page=2").then((result)=>{
 //         result.json().then((response)=>{
-//            setData(response) 
+//            setData(response)
 //         })
 //     })
-// },[])    
-
+// },[])
 
 //     const [data,setData] = useState([])
 
-    
-      
 //   console.log(data)
-
 
 //   return (
 //     <div>
@@ -157,10 +145,9 @@ export const City=() => {
 //         </tr>
 //             )
 //         }
-//       </table>  
+//       </table>
 //     </div>
 //   )
 // }
 
 export default City;
-

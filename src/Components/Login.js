@@ -17,7 +17,7 @@ export default function Login() {
 
   async function getAuthenticate() {
     let data = {
-      name: "rehan",
+      name: "rehan ",
       token: "sqel1324154aswe",
     };
     setCookie(".milkyfie_user", JSON.stringify(data), 30);

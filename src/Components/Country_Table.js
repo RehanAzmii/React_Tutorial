@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import Leftbar from "./Leftbar";
 import "./Country_table.css";
 import Rightbar from "./Rightbar";
 import Navbar from "./Narbar";
 import { JsonData } from "../data1";
-import { Button } from "react-bootstrap";
+import { Button , Modal} from "react-bootstrap";
+import ModelExample from "./Modal";
 
 function Country_Table() {
+
+const [open , setOpen] = useState(false)
+
+const handleClosed = () => {
+  setOpen(false)
+};
+
+
+const handleOpen = () => {
+  setOpen(true)
+};
+
+
   const tableHead = [
     { title: "#", width: "45%" },
     { title: "name", width: "45%" },
@@ -33,15 +47,24 @@ function Country_Table() {
         <div className="row">
           <div className="col-lg-8 bg-white rounded shadow d-block m-auto">
             <div className="d-flex pt-2 pb-2 right">
-              <Button className="btn btn-danger">New</Button>
+              <Button className="btn btn-danger"
+              onClick={handleOpen}>
+                New
+              </Button>
             </div>
+            <Modal 
+             onClose={handleClosed}
+             open={open}>
+              
+             
+            </Modal>
 
             {/* <!-- Fixed header table--> */}
             <div className="table-responsive">
               <table className="table ">
                 <thead>
                   <tr>
-                    {tableHead.map((data, index) => {
+                    {tableHead.map((data) => {
                       return (
                         <th scope="col" style={{ width: data.width }}>
                           {data.title}
