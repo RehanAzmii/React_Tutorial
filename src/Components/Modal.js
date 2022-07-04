@@ -19,11 +19,13 @@ import React, { useState } from "react";
   };
   const handleForm = () => {
     setData((data) => [...data, input]);
+    closeModal()
   };
 
   return (
     <>
       <div>
+      
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLongTitle-1">
@@ -39,6 +41,7 @@ import React, { useState } from "react";
               <span aria-hidden="true">×</span>
             </button>
           </div>
+        
           <div className="modal-body">
             {/* <input
                 type="text"
@@ -105,13 +108,16 @@ import React, { useState } from "react";
           </div>
           <div class="modal-footer">
             <button
+             onClick={() => closeModal(false)}
               type="button"
               class="btn btn-secondary"
               data-dismiss="modal"
             >
               Close
             </button>
-            <button type="button" class="btn btn-primary">
+            <button type="button" class="btn btn-primary"
+            onClick={handleForm}>
+
               Save changes
             </button>
           </div>

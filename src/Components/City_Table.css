@@ -47,8 +47,15 @@ body {
     min-height: 100vh;
 
 }
-.cus-top
-{
-    margin-top: 110px;
-}
 
+.modal-content {
+    position: absolute!important;
+   
+}
+.modal-content {
+   
+    width: 50%!important;
+    margin-left: 300px;
+    box-shadow: 1px 1px 13px -6px;
+   
+}

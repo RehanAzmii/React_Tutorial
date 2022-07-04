@@ -7,7 +7,7 @@ import State from "./Components/State";
 import City from "./Components/City";
 import Login from "./Components/Login";
 import { getCookie } from "./Components/Cookies";
-import Model from "./Components/Modal";
+// import Model from "./Components/Modal";
 
 function App() {
   const navigate = useNavigate();

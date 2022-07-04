@@ -39,28 +39,20 @@ export const City = () => {
         <header id="topnav">
           <div className="topbar-main">
             <div className="container-fluid">
-              {/* <!-- Logo container--> */}
               <Leftbar />
-              {/* <!-- End Logo container--> */}
-              <Rightbar />
-              {/* <!-- end menu-extras --> */}
-              <div className="clearfix"></div>
+             <Rightbar />
+             <div className="clearfix"></div>
             </div>
-            {/* <!-- end container --> */}
-          </div>
-          {/* <!-- end topbar-main --> */}
-          {/* <!-- MENU Start --> */}
-          <Navbar />
-          {/* <!-- end navbar-custom --> */}
-        </header>
+            </div>
+               <Navbar />
+              </header>
         <div className="container-fluid py-5 cus-top">
           <div className="row">
             <div className="col-lg-12 bg-white rounded shadow">
               <div className="d-flex pt-2 pb-2 right">
                 <Button
                   className="btn btn-danger"
-                  onClick={() => setOpen(true)}
-                >
+                  onClick={() => setOpen(true)}>
                   New
                 </Button>
               </div>
@@ -74,8 +66,8 @@ export const City = () => {
  
                )}
              
-              <div className="table-responsive">
-                <table className="table table-bordered">
+              <div className="table-responsive cus-tb">
+                <table className="table table-bordered cus-bd">
                   <thead>
                     <tr>
                       {tableHead.map((data) => {
