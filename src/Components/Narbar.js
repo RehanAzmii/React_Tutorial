@@ -223,7 +223,7 @@ const Navbar = () => {
                   <li>
                     <ul>
                       <li>
-                        <a href="pages-login.html">Login</a>
+                        {/* < NavLink to="login">Login</NavLink> */}
                       </li>
                       <li>
                         <a href="pages-register.html">Register</a>
@@ -265,12 +265,17 @@ const Navbar = () => {
                         <NavLink to="/state">States</NavLink>
                       </li>
                       <li>
-                        <a href="pages-recoverpw.html">City</a>
+                        <NavLink to="/city">City</NavLink>
                       </li>
                     </ul>
                   </li>
                 </ul>
               </li>
+
+
+
+
+
               <li className="has-submenu">
                 <a href="#">
                   <i className="dripicons-copy"></i>Engineering
@@ -279,7 +284,7 @@ const Navbar = () => {
                   <li>
                     <ul>
                       <li>
-                        <a href="pages-login.html">mechanical</a>
+                        <NavLink to="/mechanical">Mechanical</NavLink>
                       </li>
                       <li>
                         <a href="pages-register.html">civil</a>

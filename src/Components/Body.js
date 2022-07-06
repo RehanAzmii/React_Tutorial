@@ -1,5 +1,4 @@
 import React from "react";
-
 import Pagetitle from "./Pagetitle";
 import Active from "./Active";
 import Project from "./Project";
@@ -13,7 +12,7 @@ import Monthly from "./Monthly";
 import Code from "./Code";
 import Week from "./Week";
 import Payment from "./Payment";
-import Weeklyrecord from "./Weeklyrecord";
+
 
 
 function Body(){
