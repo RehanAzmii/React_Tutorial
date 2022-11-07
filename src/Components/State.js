@@ -48,7 +48,6 @@ function State() {
                 <tr>
                   <td>{data.userId}</td>
                   <th>{index + 1}</th>
-                  {/* <td>{data.userId}</td> */}
                   <td>{data.title}</td>
                   <td>{data.body}</td>
                 </tr>

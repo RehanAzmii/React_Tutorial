@@ -1,39 +1,27 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router";
+import { DataContext } from "../context/DataContext";
 import { setCookie } from "./Cookies";
-const ColoredLine = ({ color }) => (
-  <hr
-    style={{
-      color,
-      backgroundColor: color,
-      height: 5,
-    }}
-  />
-);
 
 export default function Login() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState();
-
-  async function getAuthenticate() {
+  const { updateTest } = useContext(DataContext);
+  async function getAuthenticate(e) {
+    e.preventDefault();
     let data = {
       name: "rehan ",
       token: "sqel1324154aswe",
     };
     setCookie(".milkyfie_user", JSON.stringify(data), 30);
+    updateTest(formData);
     return navigate("/");
-    // var data = await postRequest(
-    //   `/Account/ApiLogin?MobileNo=${formData.email}&Password=${formData.password}`
-    // );
-    // console.log("data:", data);
-    // if (data.statusCode === 1) {
-    //   setCookie(".milkyfie_user", JSON.stringify(data.result), 30);
-    //   return navigate("dashboard");
-    // }
   }
 
   const inputHandler = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData(() => {
+      return { ...formData, [e.target.name]: e.target.value };
+    });
   };
 
   return (
@@ -48,10 +36,7 @@ export default function Login() {
               </a>
             </div>
             <div className="p-3">
-              <form
-                className="form-horizontal m-t-20"
-                // action="https://mannatthemes.com/zoogler/horizontal/index.html"
-              >
+              <form className="form-horizontal m-t-20">
                 <div className="form-group row">
                   <div className="col-12">
                     <input

@@ -1,20 +1,16 @@
 import React from "react";
 import Leftbar from "./Leftbar";
-import "./Country_table.css";
 import Rightbar from "./Rightbar";
 import Navbar from "./Narbar";
-import { JsonData } from "../Country-Tabledata";
+import "./Country_table.css";
 import { Button } from "react-bootstrap";
 
-
-function Country_Table() {
-
-   const tableHead = [
+function Table() {
+  const tableHead = [
     { title: "#", width: "45%" },
     { title: "name", width: "45%" },
     { title: "city", width: "45%" },
   ];
-
   return (
     <div>
       <header id="topnav">
@@ -35,11 +31,9 @@ function Country_Table() {
         <div className="row">
           <div className="col-lg-8 bg-white rounded shadow d-block m-auto">
             <div className="d-flex pt-2 pb-2 right">
-              <Button className="btn btn-danger">
-                New
-              </Button>
+              <Button className="btn btn-danger">New</Button>
             </div>
-          
+
             {/* <!-- Fixed header table--> */}
             <div className="table-responsive">
               <table className="table ">
@@ -55,7 +49,7 @@ function Country_Table() {
                   </tr>
                 </thead>
 
-                <tbody>
+                {/* <tbody>
                   {JsonData.map((data, index) => {
                     return (
                       <tr>
@@ -65,7 +59,7 @@ function Country_Table() {
                       </tr>
                     );
                   })}
-                </tbody>
+                </tbody> */}
               </table>
             </div>
 
@@ -77,4 +71,4 @@ function Country_Table() {
   );
 }
 
-export default Country_Table;
+export default Table;

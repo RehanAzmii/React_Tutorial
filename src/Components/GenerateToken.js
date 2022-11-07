@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import "../Component/Login.css";
-import { postRequest } from "../../Services/API_service";
-import { setCookie } from "../Library/Cookies";
+import { postRequest, postRequestt } from "../Service/API_Service";
+import { setCookie } from "./Cookies";
 import { useNavigate } from "react-router";
 
 const ColoredLine = ({ color }) => (
@@ -16,22 +15,34 @@ const ColoredLine = ({ color }) => (
 
 export default function Generate_Token() {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState();
+  const [formData, setFormData] = useState({
+    email: "",
+    pass: "",
+  });
 
-  async function getToken() {
-    var data = await postRequest(
-      `/Account/ApiLogin?MobileNo=${formData.email}&Password=${formData.password}`
+  async function getToken(e) {
+    e.preventDefault();
+    // var data = await postRequest(
+    //   `/Account/ApiLogin?MobileNo=${formData.email}&Password=${formData.password}`
+    // );
+    const data = await postRequestt(
+      `/Account/ApiLogin?MobileNo=${formData.name}&Password=${formData.password}`
     );
-    console.log("data:", data);
-    if (data.statusCode === 1) {
-      setCookie(".milkyfie_user", JSON.stringify(data.result), 30);
-      return navigate("/");
-    }
+    let token = data?.result?.token;
+    localStorage.setItem("token", token);
+    navigate("/");
   }
 
   const inputHandler = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prev) => {
+      return {
+        ...prev,
+        [name]: value,
+      };
+    });
   };
+
   return (
     <div>
       <div className="accountbg"></div>
@@ -49,10 +60,10 @@ export default function Generate_Token() {
                   <div className="col-12">
                     <input
                       className="form-control"
-                      type="email"
+                      type="text"
                       required=""
-                      placeholder="Email Address"
-                      name="email"
+                      placeholder="name"
+                      name="name"
                       onChange={inputHandler}
                     />
                   </div>

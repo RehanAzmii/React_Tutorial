@@ -43,12 +43,7 @@ import React, { useState } from "react";
           </div>
         
           <div className="modal-body">
-            {/* <input
-                type="text"
-                name="id"
-                value={input.id}
-                onChange={changeHandler}
-              /> */}
+           
             <div class="form-group row">
               <label for="example-text-input" class="col-sm-2 col-form-label">
                 ID

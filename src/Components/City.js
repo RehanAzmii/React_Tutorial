@@ -40,37 +40,40 @@ export const City = () => {
           <div className="topbar-main">
             <div className="container-fluid">
               <Leftbar />
-             <Rightbar />
-             <div className="clearfix"></div>
+
+              <Rightbar />
+
+              <div className="clearfix"></div>
             </div>
-            </div>
-               <Navbar />
-              </header>
+          </div>
+
+          <Navbar />
+        </header>
         <div className="container-fluid py-5 cus-top">
           <div className="row">
             <div className="col-lg-12 bg-white rounded shadow">
               <div className="d-flex pt-2 pb-2 right">
                 <Button
                   className="btn btn-danger"
-                  onClick={() => setOpen(true)}>
+                  onClick={() => setOpen(true)}
+                >
                   New
                 </Button>
               </div>
-               {open && (
-                 <Model
-                 setData={setData}
-                 open={open}
-                 onClose={() => setOpen(false)}
-                 closeModal={setOpen}
-               />
- 
-               )}
-             
+              {open && (
+                <Model
+                  setData={setData}
+                  open={open}
+                  onClose={() => setOpen(false)}
+                  closeModal={setOpen}
+                />
+              )}
+
               <div className="table-responsive cus-tb">
                 <table className="table table-bordered cus-bd">
                   <thead>
                     <tr>
-                      {tableHead.map((data) => {
+                      {tableHead.map((data, index) => {
                         return (
                           <th
                             scope="col"

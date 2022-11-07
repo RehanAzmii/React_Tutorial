@@ -1,3 +1,4 @@
+import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
@@ -223,10 +224,10 @@ const Navbar = () => {
                   <li>
                     <ul>
                       <li>
-                        {/* < NavLink to="login">Login</NavLink> */}
+                        <NavLink to="login">Login</NavLink>
                       </li>
                       <li>
-                        <a href="pages-register.html">Register</a>
+                        <NavLink to="register">Register</NavLink>
                       </li>
                       <li>
                         <a href="pages-recoverpw.html">Recover Password</a>
@@ -272,11 +273,7 @@ const Navbar = () => {
                 </ul>
               </li>
 
-
-
-
-
-              <li className="has-submenu">
+              {/* <li className="has-submenu">
                 <a href="#">
                   <i className="dripicons-copy"></i>Engineering
                 </a>
@@ -287,7 +284,7 @@ const Navbar = () => {
                         <NavLink to="/mechanical">Mechanical</NavLink>
                       </li>
                       <li>
-                        <a href="pages-register.html">civil</a>
+                        <NavLink to="/civil">Civil</NavLink>
                       </li>
                       <li>
                         <a href="pages-recoverpw.html">Electrical</a>
@@ -298,7 +295,7 @@ const Navbar = () => {
                     </ul>
                   </li>
                 </ul>
-              </li>
+              </li> */}
             </ul>
             {/* <!-- End navigation menu --> */}
           </div>
